@@ -22,11 +22,49 @@ body {
 	flex-grow: 1;
 }
 
+.m-bottom {
+	margin-bottom: 1rem;
+}
+
+.m-bottom-medium {
+	margin-bottom: 1.5rem;
+}
+
+.m-bottom-large {
+	margin-bottom: 2rem;
+}
+
+.m-top {
+	margin-top: 1rem;
+}
+
+.m-top-medium {
+	margin-top: 1.5rem;
+}
+
+.m-top-large {
+	margin-top: 2rem;
+}
+
 button {
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
 	background-color: transparent;
+}
+
+.button {
+	padding: 0.55rem 1.25rem;
+	border-radius: 6px;
+	cursor: pointer;
+	-webkit-transition: background 0.125s, color 0.125s;
+	transition: background 0.125s, color 0.125s;
+	background-color: #fff;
+	color: #49b9ca;
+}
+
+.button:hover {
+	background-color: rgba(242, 242, 242, 0.88);
 }
 
 .content {
@@ -146,6 +184,14 @@ button {
 	margin: 0;
 	font-size: 1.75rem;
 	font-weight: 600;
+}
+
+.title.medium {
+	font-size: 1.4rem;
+}
+
+.top-bar .user-button {
+	margin-left: 0.75rem;
 }
 
 .pfp {
