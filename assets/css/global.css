@@ -1,0 +1,156 @@
+a, span, div, body, button, input, img, form, h1, h2, h3, h4, h5, h6, code {
+	margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-weight: inherit;
+    font-style: inherit;
+    font-family: inherit;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+
+body {
+	font-family: "Roboto", sans-serif;
+	color: rgba(0, 0, 0, 0.96);
+}
+
+.flex-grow {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	flex-grow: 1;
+}
+
+button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+}
+
+.content {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	overflow: hidden;
+	-webkit-box-flex: 1;
+	-ms-flex: 1 1 100%;
+	flex: 1 1 100%;
+	margin: 0;
+}
+
+.sidebar {
+	background-color: #49b9ca;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-flex: 0;
+	-ms-flex: 0 0 350px;
+	flex: 0 0 350px;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	min-width: 250px;
+	overflow: hidden;
+	position: relative;
+	z-index: 2;
+}
+
+.sidebar .sidebar-container {
+	box-sizing: border-box;
+	min-height: 100vh;
+	padding: 1.25rem 1.25rem 0 1.25rem;
+}
+
+.main-content {
+	background-color: #98dff3;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-flex: 1;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex: 1 1 1440px;
+	flex: 1 1 1440px;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	overflow: hidden;
+	z-index: 2;
+}
+
+.main-content .main {
+	position: relative;
+	height: 100%;
+}
+
+.logo {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	align-items: center;
+	color: #fff;
+	line-height: 0;
+}
+
+.logo img {
+	height: 35px;
+}
+
+.logo > span {
+	margin-left: 0.55rem;
+	font-size: 1.15rem;
+	font-weight: 500;
+}
+
+.nav-items {
+	margin-top: 1.65rem;
+}
+
+.nav-item {
+	display: block;
+	padding: 0.75rem;
+	border-radius: 8px;
+	text-decoration: none;
+	-webkit-transition: background 0.125s, color 0.125s;
+	transition: background 0.125s, color 0.125s;
+	color: rgba(255, 255, 255, 0.78);
+}
+
+.nav-item:hover {
+	color: rgba(255, 255, 255, 0.92);
+}
+
+.nav-item.active {
+	font-weight: 600;
+	background-color: rgba(255, 255, 255, 0.92);
+	color: #49b9ca;
+}
+
+.main {
+	padding: 1.25rem 2rem;
+}
+
+.top-bar {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	align-items: center;
+}
+
+.title {
+	margin: 0;
+	font-size: 1.75rem;
+	font-weight: 600;
+}
+
+.pfp {
+	line-height: 0;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	cursor: pointer;
+}
