@@ -1,13 +1,13 @@
 a, span, div, body, button, input, img, form, h1, h2, h3, h4, h5, h6, code {
 	margin: 0;
-    padding: 0;
-    border: 0;
-    outline: 0;
-    font-weight: inherit;
-    font-style: inherit;
-    font-family: inherit;
-    font-size: 100%;
-    vertical-align: baseline;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-family: inherit;
+	font-size: 100%;
+	vertical-align: baseline;
 }
 
 body {
@@ -23,10 +23,10 @@ body {
 }
 
 button {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    background-color: transparent;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	background-color: transparent;
 }
 
 .content {
@@ -100,7 +100,7 @@ button {
 	height: 35px;
 }
 
-.logo > span {
+.logo>span {
 	margin-left: 0.55rem;
 	font-size: 1.15rem;
 	font-weight: 500;
@@ -131,7 +131,7 @@ button {
 }
 
 .main {
-	padding: 1.25rem 2rem;
+	padding: 0 2rem 1.25rem 2rem;
 }
 
 .top-bar {
@@ -139,6 +139,7 @@ button {
 	display: -ms-flexbox;
 	display: flex;
 	align-items: center;
+	padding: 1.25rem 2rem;
 }
 
 .title {
