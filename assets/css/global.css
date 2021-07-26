@@ -54,7 +54,7 @@ button {
 }
 
 .button {
-	padding: 0.55rem 1.25rem;
+	padding: 0.55rem 1.35rem;
 	border-radius: 6px;
 	cursor: pointer;
 	-webkit-transition: background 0.125s, color 0.125s;
@@ -164,7 +164,7 @@ button {
 
 .nav-item.active {
 	font-weight: 600;
-	background-color: rgba(255, 255, 255, 0.92);
+	background-color: #fff;
 	color: #49b9ca;
 }
 
