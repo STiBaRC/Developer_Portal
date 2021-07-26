@@ -64,7 +64,11 @@ button {
 }
 
 .button:hover {
-	background-color: rgba(242, 242, 242, 0.88);
+	background-color: #e5f6ff;
+}
+
+.button:focus {
+	background-color: #d6ebf5;
 }
 
 .content {
@@ -159,6 +163,10 @@ button {
 }
 
 .nav-item:hover {
+	color: rgba(255, 255, 255, 0.92);
+}
+
+.nav-item:focus {
 	color: rgba(255, 255, 255, 0.92);
 }
 
@@ -260,4 +268,8 @@ button {
 
 .dropdown .item:hover {
 	background-color: #e5f6ff;
+}
+
+.dropdown .item:focus {
+	background-color: #d6ebf5;
 }
