@@ -34,8 +34,17 @@
                     <span class="flex-grow"></span>
                     <button class="button">New&nbsp;App</button>
                     <button class="user-button" id="pfpBtn">
-                        <img class="pfp" src="https://stibarc.com/icon.png">
+                        <div class="pfp">
+                            <div class="pfp-inner" style="background-image: url('https://stibarc.com/icon.png')"></div>
+                        </div>
                     </button>
+                    <div id="pfpDropdown" class="dropdown" style="display: none;">
+                        <div class="header"><span>Username</span></div>
+                        <div class="divider"></div>
+                        <div class="items">
+                            <a href="#" class="item">Log out</a>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="main">
@@ -43,8 +52,10 @@
                 <h2 class="title medium">My applications</h2>
             </div>
         </div>
-    
+
     </div>
+
+    <script src="./assets/js/global.js"></script>
 
 </body>
 
