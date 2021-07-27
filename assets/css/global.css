@@ -57,6 +57,7 @@ button {
 	padding: 0.55rem 1.35rem;
 	border-radius: 6px;
 	cursor: pointer;
+	text-decoration: none;
 	-webkit-transition: background 0.125s, color 0.125s;
 	transition: background 0.125s, color 0.125s;
 	background-color: #fff;
@@ -230,7 +231,7 @@ button {
 	color: #141515;
 	border: 3px solid #fff;
 	-webkit-box-shadow: 0 2px 10px rgb(0 0 0 / 20%);
-	box-shadow: 0 2px 10px rgb(0 0 0 / 20%);
+	box-shadow: 0 3px 10px rgb(0 0 0 / 20%);
 	border-radius: 5px;
 	min-width: 10rem;
 	right: 2rem;
@@ -239,7 +240,7 @@ button {
 }
 
 .dropdown .header {
-	padding: 0.85rem 1.25rem calc(0.85rem + 2px) 1.25rem;
+	padding: 0.75rem 1.25rem calc(0.75rem + 1px) 1.25rem;
 }
 
 .dropdown .divider {
@@ -272,4 +273,44 @@ button {
 
 .dropdown .item:focus {
 	background-color: #d6ebf5;
+}
+
+/* loading spiner */
+
+.loader-container {
+    display: block;
+    margin: 1rem auto;
+}
+
+.loader {
+	border: 5px solid transparent;
+	border-radius: 50%;
+	border-top: 5px solid #f2f2f2;
+	border-right: 5px solid transparent;
+	border-bottom: 5px solid transparent;
+	width: 25px;
+	height: 25px;
+    margin: auto;
+	-webkit-animation: spin 0.4s linear infinite;
+	animation: spin 0.4s linear infinite;
+}
+
+@-webkit-keyframes spin {
+	0% {
+		-webkit-transform: rotate(0deg);
+	}
+
+	100% {
+		-webkit-transform: rotate(360deg);
+	}
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
 }

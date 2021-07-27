@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Applications - STiBaRC Developer Portal</title>
+    <link rel="icon" type="image/png" href="https://stibarc.com/icon.png">
+    <!-- CSS -->
+    <link href="./assets/css/global.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="content">
+
+        <div class="sidebar">
+            <div class="sidebar-container">
+                <div class="logo">
+                    <img src="https://records.stibarc.com/assets/images/logosquare.png">
+                    <span>Developer Portal</span>
+                </div>
+                <div class="nav-items">
+                    <a class="nav-item active" href="#">Applications</a>
+                    <a class="nav-item" href="#">Documentation</a>
+                </div>
+            </div>
+        </div>
+        <div class="main-content">
+            <div>
+                <div class="top-bar">
+                    <h1 class="title">Applications</h1>
+                    <span class="flex-grow"></span>
+                    <button class="button">New&nbsp;App</button>
+                    <button id="pfpBtn" class="user-button">
+                        <img id="pfpBtnImg" class="pfp" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+                    </button>
+                    <div id="pfpDropdown" class="dropdown" style="display: none;">
+                        <div class="header"><span id="pfp-username"></span></div>
+                        <div class="divider"></div>
+                        <div class="items">
+                            <a href="./logout.html" class="item">Sign&nbsp;out</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main">
+                <div class="m-bottom-medium">Get started by creating a new application.</div>
+                <h2 class="title medium">My applications</h2>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="./assets/js/global.js"></script>
+    <script src="./assets/js/app.js"></script>
+
+</body>
+
+</html>

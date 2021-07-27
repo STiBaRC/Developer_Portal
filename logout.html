@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading...</title>
+    <link rel="icon" type="image/png" href="https://stibarc.com/icon.png">
+    <style>
+        a,
+        span,
+        div,
+        body,
+        button,
+        input,
+        img,
+        form,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        code {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            outline: 0;
+            font-weight: inherit;
+            font-style: inherit;
+            font-family: inherit;
+            font-size: 100%;
+            vertical-align: baseline;
+        }
+
+        body {
+            font-family: "Roboto", sans-serif;
+            background-color: #98dff3;
+            color: rgba(0, 0, 0, 0.96);
+        }
+
+        /* loading spiner */
+
+        .loader-container {
+            display: block;
+            margin: 1rem auto;
+        }
+
+        .loader {
+            border: 5px solid transparent;
+            border-radius: 50%;
+            border-top: 5px solid #fff;
+            border-right: 5px solid transparent;
+            border-bottom: 5px solid transparent;
+            width: 25px;
+            height: 25px;
+            margin: auto;
+            -webkit-animation: spin 0.4s linear infinite;
+            animation: spin 0.4s linear infinite;
+        }
+
+        @-webkit-keyframes spin {
+            0% {
+                -webkit-transform: rotate(0deg);
+            }
+
+            100% {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div style="margin-top: 1.5rem;">
+        <div class="loader-container">
+            <div class="loader"></div>
+        </div>
+    </div>
+
+    <script>
+        function logout() {
+            var sess = window.localStorage.getItem("sess");
+            var xmlHttp = new XMLHttpRequest();
+            xmlHttp.open("GET", "https://api.stibarc.com/logout.sjs?sess=" + sess, false);
+            xmlHttp.send(null);
+            window.localStorage.removeItem("sess");
+            window.localStorage.removeItem("username");
+            location.href = "/";
+        }
+
+        window.onload = function () {
+            logout();
+        }
+    </script>
+
+</body>
+
+</html>
