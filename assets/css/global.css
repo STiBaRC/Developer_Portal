@@ -15,6 +15,10 @@ body {
 	color: rgba(0, 0, 0, 0.96);
 }
 
+a {
+	text-decoration: none;
+}
+
 .flex-grow {
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -197,6 +201,11 @@ button {
 
 .title.medium {
 	font-size: 1.4rem;
+}
+
+.user-button {
+	width: 40px;
+	height: 40px;
 }
 
 .top-bar .user-button {
