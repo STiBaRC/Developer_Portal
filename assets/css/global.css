@@ -385,7 +385,7 @@ button {
 }
 
 .dialog-actions .button:not(:last-child) {
-	margin-right: 0.5rem;
+	margin-right: 0.75rem;
 }
 
 /* app buttons */
