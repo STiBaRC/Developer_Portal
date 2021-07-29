@@ -36,7 +36,7 @@
                 <div class="top-bar">
                     <h1 class="title">Applications</h1>
                     <span class="flex-grow"></span>
-                    <button class="button">New&nbsp;App</button>
+                    <button class="button" onclick="newApp()">New&nbsp;App</button>
                     <button id="pfpBtn" class="user-button">
                         <img id="pfpBtnImg" class="pfp"
                             src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
@@ -70,15 +70,23 @@
 
     </div>
 
-    <div class="overlay" style="display: none;">
+    <div class="overlay" id="newAppModal" style="display: none;">
         <div class="dialog">
             <div class="dialog-inner">
-                <h3>New Application</h3>
+                <h2 class="dialog-title">Create Application</h2>
+                <div class="inputs">
+                    <input id="newAppName" class="input full" type="text" placeholder="Name">
+                </div>
+                <div class="dialog-actions">
+                    <span class="flex-grow"></span>
+                    <button class="button" onclick="closeDialogs()">Cancel</button>
+                    <button class="button primary">Create</button>
+                </div>
             </div>
         </div>
     </div>
-
     <script src="./assets/js/global.js"></script>
+    <script src="./assets/js/applications.js"></script>
     <script src="./assets/js/app.js"></script>
 
 </body>
