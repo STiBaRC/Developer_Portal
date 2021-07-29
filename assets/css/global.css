@@ -24,8 +24,16 @@ a {
 	flex-grow: 1;
 }
 
+.block {
+	display: block;
+}
+
 .m-bottom {
 	margin-bottom: 1rem;
+}
+
+.m-bottom-small {
+	margin-bottom: 0.5rem;
 }
 
 .m-bottom-medium {
@@ -40,6 +48,10 @@ a {
 	margin-top: 1rem;
 }
 
+.m-top-small {
+	margin-top: 0.5rem;
+}
+
 .m-top-medium {
 	margin-top: 1.5rem;
 }
@@ -52,6 +64,8 @@ button {
 	appearance: none;
 	background-color: transparent;
 }
+
+/* buttons */
 
 .button {
 	padding: 0.55rem 1.35rem;
@@ -69,6 +83,42 @@ button {
 
 .button:focus {
 	background-color: #d6ebf5;
+}
+
+.button.primary {
+	background-color: #49b9ca;
+	color: #fff;
+}
+
+.button.primary:hover {
+	background-color: #59d1e3;
+}
+
+.button.primary:focus {
+	background-color: #52b7c7;
+}
+
+/* inputs */
+
+.input {
+	box-sizing: border-box;
+	background-color: #fff;
+	border: 2px solid #49b9ca;
+	padding: 0.55rem 0.75rem;
+	border-radius: 6px;
+}
+
+.input.full {
+	display: block;
+	width: 100%;
+}
+
+.input:focus {
+	border-color: #59d1e3;
+}
+
+.inputs {
+	box-sizing: border-box;
 }
 
 .content {
@@ -138,6 +188,7 @@ button {
 	padding: 0.75rem;
 	border-radius: 8px;
 	text-decoration: none;
+	box-sizing: border-box;
 	transition: background 0.125s, color 0.125s;
 	color: rgba(255, 255, 255, 0.78);
 }
@@ -164,6 +215,11 @@ button {
 	display: flex;
 	align-items: center;
 	padding: 1.25rem 2rem;
+}
+
+.divider {
+	background-color: #e5f6ff;
+	height: 1px;
 }
 
 .title {
@@ -221,11 +277,6 @@ button {
 
 .dropdown .header {
 	padding: 0.75rem 1.25rem calc(0.75rem + 1px) 1.25rem;
-}
-
-.dropdown .divider {
-	background-color: #e5f6ff;
-	height: 1px;
 }
 
 .dropdown .items {
@@ -310,7 +361,7 @@ button {
 	color: #141515;
 	border: 3px solid #fff;
 	box-shadow: 0 0 15px rgb(0, 0, 0, 0.45);
-	border-radius: 5px;
+	border-radius: 6px;
 	box-sizing: border-box;
 	overflow: visible;
 	width: 450px;
@@ -319,8 +370,25 @@ button {
 }
 
 .dialog-inner {
-	padding: 20px;
+	padding: 0.85rem;
 }
+
+.dialog-title {
+	margin-bottom: 0.85rem;
+	font-weight: 500;
+}
+
+.dialog-actions {
+	margin-top: 0.95rem;
+	display: flex;
+	align-items: center;
+}
+
+.dialog-actions .button:not(:last-child) {
+	margin-right: 0.5rem;
+}
+
+/* app buttons */
 
 .apps {
 	grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
