@@ -7,6 +7,7 @@ function $(id) {
 }
 
 document.addEventListener("click", function (event) {
+    /* dropdown */
     var isClickInside = $("pfpBtn").contains(event.target);
     var isClickInsideItems = $("pfpDropdown").contains(event.target);
 
@@ -22,6 +23,13 @@ document.addEventListener("click", function (event) {
     if (!isClickInside && !isClickInsideItems) {
         //the click was outside the nav dropdown
         $("pfpDropdown").style.display = "none";
+    }
+    /* dialog */
+    var overlays = $(".overlay");
+    for (var i = 0; i < overlays.length; i++) {
+        if (overlays[i] == event.target) {
+            overlays[i].style.display = "none";
+        }
     }
 });
 
