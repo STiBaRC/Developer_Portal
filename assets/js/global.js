@@ -1,3 +1,5 @@
+const sdpAPI = "https://developer.stibarc.com/api/";
+
 function $(id) {
     if (id.startsWith(".")) {
         return document.getElementsByClassName(id.substring(1));

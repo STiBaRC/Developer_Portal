@@ -146,6 +146,9 @@ button {
 	box-sizing: border-box;
 	min-height: 100vh;
 	padding: 1.25rem 1.25rem 0 1.25rem;
+	display: flex;
+	flex: 1 1 auto;
+	flex-direction: column;
 }
 
 .main-content {
@@ -209,12 +212,17 @@ button {
 
 .main {
 	padding: 0 2rem 1.25rem 2rem;
+	min-height: 100vh;
 }
 
 .top-bar {
 	display: flex;
 	align-items: center;
 	padding: 1.25rem 2rem;
+}
+
+.top-bar .title {
+	margin-right: 0.5rem;
 }
 
 .divider {
@@ -379,7 +387,7 @@ button {
 }
 
 .dialog-actions {
-	margin-top: 0.95rem;
+	margin-top: 0.75rem;
 	display: flex;
 	align-items: center;
 }
@@ -393,11 +401,13 @@ button {
 .apps {
 	grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
 	display: grid;
+	margin: -0.85rem 0 0 -0.85rem;
 }
 
 .app-wrapper {
 	display: flex;
 	flex: 0 0 auto;
+	padding: 0.85rem 0 0 0.85rem;
 }
 
 .app {
