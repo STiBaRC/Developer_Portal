@@ -9,20 +9,20 @@ function $(id) {
 }
 
 document.addEventListener("click", function (event) {
-    /* dropdown */
-    var isClickInside = $("pfpBtn").contains(event.target);
-    var isClickInsideItems = $("pfpDropdown").contains(event.target);
-
+    /* user dropdown */
+    var pfpBtnClicked = $("pfpBtn").contains(event.target);
+    var mobilePfpBtnClicked = $("mobilePfpBtn").contains(event.target);
+    var dropDownClicked = $("pfpDropdown").contains(event.target);
     if (
         $("pfpDropdown").style.display == "none" ||
         $("pfpDropdown").style.display == "" ||
-        isClickInsideItems
+        dropDownClicked
     ) {
         $("pfpDropdown").style.display = "block";
     } else {
         $("pfpDropdown").style.display = "none";
     }
-    if (!isClickInside && !isClickInsideItems) {
+    if (!pfpBtnClicked && !mobilePfpBtnClicked && !dropDownClicked) {
         //the click was outside the nav dropdown
         $("pfpDropdown").style.display = "none";
     }
@@ -34,6 +34,18 @@ document.addEventListener("click", function (event) {
         }
     }
 });
+
+var mobileMenuOpen = false;
+
+function toggleMenu() {
+    if (!mobileMenuOpen) {
+        mobileMenuOpen = true;
+        $(".sidebar")[0].classList.add("open");
+    } else {
+        mobileMenuOpen = false;
+        $(".sidebar")[0].classList.remove("open");
+    }
+}
 
 /* user info */
 if (localStorage.getItem('pfp') !== null && localStorage.getItem('pfp') !== "") {
@@ -68,6 +80,7 @@ function getUserPfp(callback, username) {
         } else {
             localStorage.setItem('pfp', userPfp);
             $("pfpBtnImg").src = localStorage.getItem('pfp');
+            $("mobilePfpBtnImg").src = localStorage.getItem('pfp');
         }
     };
     xhttp.open('GET', 'https://api.stibarc.com/v2/getuserpfp.sjs?id=' + username, true);
