@@ -35,15 +35,19 @@ document.addEventListener("click", function (event) {
     }
 });
 
+/* mobile menu */
+
 var mobileMenuOpen = false;
 
-function toggleMenu() {
-    if (!mobileMenuOpen) {
+function toggleMenu(state) {
+    if (!mobileMenuOpen || state) {
         mobileMenuOpen = true;
         $(".sidebar")[0].classList.add("open");
+        $(".mobile-overlay")[0].classList.add("open");
     } else {
         mobileMenuOpen = false;
         $(".sidebar")[0].classList.remove("open");
+        $(".mobile-overlay")[0].classList.remove("open");
     }
 }
 
