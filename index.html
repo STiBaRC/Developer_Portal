@@ -17,39 +17,73 @@
 
 <body>
 
-    <div class="content">
+    <div class="outside-wrapper">
+        <div class="outside">
 
-        <div class="main-content">
-            <div>
-                <div class="top-bar">
-                    <h1 class="title">STiBaRC Developer Program</h1>
-                    <span class="flex-grow"></span>
-                    <a href="https://stibarc.com/oauth/?id=8e8fa1e98d84d87f0948&perms=" id="topBtn"
-                        class="button">Sign&nbsp;in</a>
-                    <button id="pfpBtn" class="user-button" style="display: none;">
-                        <img id="pfpBtnImg" class="pfp"
-                            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
-                    </button>
-                    <div id="pfpDropdown" class="dropdown" style="display: none;">
-                        <div class="header"><span id="pfp-username"></span></div>
-                        <div class="divider"></div>
-                        <div class="items">
-                            <a href="./logout.html" class="item">Sign&nbsp;out</a>
+            <div class="content">
+
+                <div class="main-content">
+
+                    <div class="mobile-nav">
+                        <div class="navHeader">
+                            <span class="menuBtn" onclick="toggleMenu()">Menu</span>
+                        </div>
+                        <button class="user-button" id="mobilePfpBtn">
+                            <div class="pfp">
+                                <img id="mobilePfpBtnImg" class="pfp"
+                                    src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+                            </div>
+                        </button>
+                    </div>
+
+                    <div class="scroll-wrapper">
+                        <div class="scroller">
+                            <div class="wrapper">
+
+                                <div class="top-bar">
+                                    <h1 class="title">STiBaRC Developer Program</h1>
+                                    <span class="flex-grow"></span>
+                                    <a href="https://stibarc.com/oauth/?id=8e8fa1e98d84d87f0948&perms=" id="topBtn"
+                                        class="button">Sign&nbsp;in</a>
+                                    <button id="pfpBtn" class="user-button" style="display: none;">
+                                        <img id="pfpBtnImg" class="pfp"
+                                            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+                                    </button>
+                                    <div id="pfpDropdown" class="dropdown" style="display: none;">
+                                        <div class="header"><span id="pfp-username"></span></div>
+                                        <div class="divider"></div>
+                                        <div class="items">
+                                            <a href="./logout.html" class="item">Sign&nbsp;out</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="main">
+                                    <div class="m-top-small m-bottom-medium">Ever wanted to make your app using STiBaRC
+                                        that
+                                        responds to
+                                        events
+                                        on the
+                                        site, but don't want to spam the API?
+                                        <p>Well worry no more, the STiBaRC Developer Program will allow you to register
+                                            your app
+                                            with
+                                            STiBaRC and get updates pushed straight to your webhook URL of choice,
+                                            whenever
+                                            something
+                                            happens on
+                                            the site!
+                                    </div>
+                                </div>
+
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="main">
-                <div class="m-bottom-medium">Ever wanted to make your app using STiBaRC that responds to events on the
-                    site, but don't want to spam the API?
-                    <p>Well worry no more, the STiBaRC Developer Program will allow you to register your app with
-                        STiBaRC and get updates pushed straight to your webhook URL of choice, whenever something
-                        happens on
-                        the site!
-                </div>
-            </div>
-        </div>
 
+                </div> <!-- /main-content -->
+
+            </div>
+
+        </div>
     </div>
 
     <script src="./assets/js/global.js"></script>

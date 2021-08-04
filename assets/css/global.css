@@ -271,7 +271,7 @@ button {
 	box-sizing: border-box;
 	flex: 1 1 auto;
 	flex-direction: column;
-	max-width: 1440px;
+	/* max-width: 1440px; */
 	min-height: min-content;
 	padding: 32px;
 	width: 100%;
@@ -349,6 +349,11 @@ button {
 	z-index: 9998;
 }
 
+.top-bar .dropdown {
+	right: 46px;
+    top: 80px;
+}
+
 @media only screen and (max-width: 990px) {
 	.sidebar {
 		bottom: 0;
@@ -373,6 +378,10 @@ button {
 	}
 	.top-bar .user-button {
 		display: none;
+	}
+	.top-bar .dropdown {
+		top: 4rem;
+		right: 2rem;
 	}
 	.mobile-nav {
 		display: block;
@@ -454,8 +463,6 @@ button {
 	box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
 	border-radius: 5px;
 	min-width: 10rem;
-	right: 2rem;
-	top: 65px;
 	z-index: 100;
 }
 
