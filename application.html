@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Applications - STiBaRC Developer Portal</title>
+    <title>Application - STiBaRC Developer Portal</title>
     <link rel="icon" type="image/png" href="https://stibarc.com/icon.png">
     <!-- CSS -->
     <link href="./assets/css/global.css" rel="stylesheet">
@@ -26,13 +26,13 @@
                         <div class="scroller nav-scroller">
                             <div class="sidebar-container">
                                 <div class="sidebar-inner">
-                                    <a href="./" class="logo">
-                                        <img src="https://records.stibarc.com/assets/images/logosquare.png">
-                                        <span>Developer Portal</span>
+                                    <a href="./applications.html" class="icon white" id="back">
+                                        <img src="./assets/images/arrow_back_white_24dp.svg">
+                                        <span>Back</span>
                                     </a>
                                     <div class="nav-items">
-                                        <a class="nav-item active" href="./applications.html">Applications</a>
-                                        <a class="nav-item" href="#">Documentation</a>
+                                        <a class="nav-item active" onclick="location.reload()">General Information</a>
+                                        <a class="nav-item" href="#">Webhooks</a>
                                     </div>
                                 </div>
                             </div>
@@ -63,9 +63,8 @@
 
                                 <div>
                                     <div class="top-bar">
-                                        <h1 class="title">Applications</h1>
+                                        <h1 class="title">General Information</h1>
                                         <span class="flex-grow"></span>
-                                        <button class="button" onclick="newApp()">New&nbsp;App</button>
                                         <button id="pfpBtn" class="user-button">
                                             <img id="pfpBtnImg" class="pfp"
                                                 src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
@@ -82,8 +81,7 @@
 
                                 <div class="main">
 
-                                    <div class="m-bottom-medium">Get started by creating a new application.</div>
-                                    <h2 class="title medium">My applications</h2>
+                                    <div class="m-bottom-medium">Set your application's name, icon, etc.</div>
 
                                     <div class="m-top-medium" id="apps">
                                         <div class="loader"></div>
@@ -101,24 +99,8 @@
         </div>
     </div>
 
-    <div class="overlay" id="newAppModal" style="display: none;">
-        <div class="dialog">
-            <div class="dialog-inner">
-                <h2 class="dialog-title">Create Application</h2>
-                <div class="inputs">
-                    <input id="newAppName" class="input full" type="text" placeholder="Name">
-                </div>
-                <div class="dialog-actions">
-                    <span class="flex-grow"></span>
-                    <button class="button" onclick="closeDialogs()">Cancel</button>
-                    <button class="button primary">Create</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <script src="./assets/js/global.js"></script>
-    <script src="./assets/js/applications.js"></script>
+    <script src="./assets/js/application.js"></script>
     <script src="./assets/js/app.js"></script>
 
 </body>
