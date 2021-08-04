@@ -42,12 +42,12 @@
 // 	}
 // }
 
-function appModule(data) {
+function appModule(data, id) {
 	var appWrapper = document.createElement("span");
 	appWrapper.setAttribute("class", "app-wrapper");
 	var app = document.createElement("a");
 	app.setAttribute("class", "app");
-	app.setAttribute("href", "#");
+	app.setAttribute("href", "./application.html?id=" + id);
 	var appIcon = document.createElement("div");
 	appIcon.setAttribute("class", "app-icon-bg");
 	appIcon.setAttribute("style", "background-image: url('" + data["appicon"] + "')");
@@ -65,7 +65,7 @@ function showApps(data) {
 	apps.setAttribute("class", "apps");
 	for (var appID in data) {
 		var appInfo = data[appID];
-		var app = appModule(appInfo);
+		var app = appModule(appInfo, appID);
 		apps.appendChild(app);
 	}
 	$("apps").innerHTML = "";

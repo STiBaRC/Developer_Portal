@@ -121,6 +121,23 @@ button {
 	box-sizing: border-box;
 }
 
+/* icons */
+
+.icon {
+	display: flex;
+	align-items: center;
+	color: inherit;
+}
+
+.icon.white {
+	color: rgba(255, 255, 255, 0.78);
+	font-weight: 500;
+}
+
+.icon>span {
+	margin-left: 6px;
+}
+
 .outside-wrapper {
 	align-items: center;
 	display: flex;
@@ -308,16 +325,17 @@ button {
 	padding: 0.75rem;
 	border-radius: 8px;
 	text-decoration: none;
+	cursor: pointer;
 	box-sizing: border-box;
 	transition: background 0.125s, color 0.125s;
 	color: rgba(255, 255, 255, 0.78);
 }
 
-.nav-item:hover {
+.nav-item:hover, .icon.white:hover {
 	color: rgba(255, 255, 255, 0.92);
 }
 
-.nav-item:focus {
+.nav-item:focus, .icon.white:focus {
 	color: rgba(255, 255, 255, 0.92);
 }
 
