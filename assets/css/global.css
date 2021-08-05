@@ -138,6 +138,16 @@ button {
 	margin-left: 6px;
 }
 
+.imgHover, .menuBtn {
+	cursor: pointer;
+	-webkit-transition: -webkit-filter 0.125s;
+}
+
+.imgHover:hover img, .menuBtn:hover img {
+	-webkit-filter: brightness(200%);
+	filter: brightness(200%);
+}
+
 .outside-wrapper {
 	align-items: center;
 	display: flex;
@@ -167,76 +177,76 @@ button {
 }
 
 .scroll-wrapper.nav {
-    flex: 1 1 auto;
-    height: auto;
-    max-height: 100vh;
-    position: relative;
-    z-index: 3;
+	flex: 1 1 auto;
+	height: auto;
+	max-height: 100vh;
+	position: relative;
+	z-index: 3;
 }
 
 .scroller {
 	overflow-y: scroll;
-    min-height: 1px;
-    -webkit-box-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
+	min-height: 1px;
+	-webkit-box-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
 }
 
 .main-content .scroller {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    overflow-x: hidden;
-    overflow-y: scroll;
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	overflow-x: hidden;
+	overflow-y: scroll;
 }
 
 .nav-scroller {
-    display: flex;
-    justify-content: flex-end;
-    overflow-x: hidden;
-    overflow-y: scroll;
+	display: flex;
+	justify-content: flex-end;
+	overflow-x: hidden;
+	overflow-y: scroll;
 }
 
 /* scrollbar */
 
 .scroller::-webkit-scrollbar {
-    width: 15px
+	width: 15px
 }
 
-.scroller::-webkit-scrollbar-thumb,.scroller::-webkit-scrollbar-track {
-    background-clip: padding-box;
-    border-width: 3px;
-    border-style: solid;
-    border-radius: 30px
+.scroller::-webkit-scrollbar-thumb, .scroller::-webkit-scrollbar-track {
+	background-clip: padding-box;
+	border-width: 3px;
+	border-style: solid;
+	border-radius: 30px
 }
 
 .scroller::-webkit-scrollbar-track {
-    border-width: initial
+	border-width: initial
 }
 
 .scroller::-webkit-scrollbar-thumb {
-    background-color: rgba(0,0,0,.4);
-    border-color: transparent
+	background-color: rgba(0, 0, 0, .4);
+	border-color: transparent
 }
 
 .scroller::-webkit-scrollbar-track {
-    background-color: transparent;
-    border-color: transparent
+	background-color: transparent;
+	border-color: transparent
 }
 
 .scroller::-webkit-scrollbar-thumb, .scroll-wrapper .scroller::-webkit-scrollbar-thumb, .scroller::-webkit-scrollbar-thumb {
-    background-color: #c8f8ff;
-    border-color: transparent;
+	background-color: #c8f8ff;
+	border-color: transparent;
 }
 
 .scroller::-webkit-scrollbar-thumb:hover, .scroll-wrapper .scroller::-webkit-scrollbar-thumb:hover, .scroller::-webkit-scrollbar-thumb:hover {
-    background-color: #e2fbff;
-    border-color: transparent;
+	background-color: #e2fbff;
+	border-color: transparent;
 }
 
-.scroller::-webkit-scrollbar-track,.scroll-wrapper .scroller::-webkit-scrollbar-track, .scroller::-webkit-scrollbar-track {
-    background-color: transparent;
-    border-color: transparent
+.scroller::-webkit-scrollbar-track, .scroll-wrapper .scroller::-webkit-scrollbar-track, .scroller::-webkit-scrollbar-track {
+	background-color: transparent;
+	border-color: transparent
 }
 
 .content {
@@ -269,9 +279,9 @@ button {
 }
 
 .sidebar .sidebar-inner {
-    flex: 1 1 auto;
-    height: fit-content;
-    padding: 26px 17px 32px 32px;
+	flex: 1 1 auto;
+	height: fit-content;
+	padding: 26px 17px 32px 32px;
 }
 
 .main-content {
@@ -369,7 +379,7 @@ button {
 
 .top-bar .dropdown {
 	right: 46px;
-    top: 80px;
+	top: 80px;
 }
 
 @media only screen and (max-width: 990px) {

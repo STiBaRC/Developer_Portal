@@ -1,6 +1,6 @@
 if(loggedIn) {
     // window.location = "/applications.html";
-    $("topBtn").textContent = "My Applications";
+    $("topBtn").innerHTML = "My&nbsp;Applications";
     $("topBtn").href = "./applications.html";
     $("pfpBtn").style.display = "";
 }
