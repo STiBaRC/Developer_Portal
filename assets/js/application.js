@@ -87,9 +87,6 @@ function createForm(data, appID) {
             break;
         case "webhooks":
             var webhooks = data["webhooks"];
-            if (typeof(webhooks) == 'undefined') {
-                webhooks = {};
-            }
             /* inputs */
             var inputs = document.createElement("div");
             inputs.setAttribute("class", "inputs");
