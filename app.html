@@ -12,7 +12,8 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Source+Code+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Source+Code+Pro&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -31,8 +32,8 @@
                                         <span>Back</span>
                                     </a>
                                     <div class="nav-items">
-                                        <a class="nav-item active" onclick="location.reload()">General Information</a>
-                                        <a class="nav-item" href="#">Webhooks</a>
+                                        <a id="nav-general" class="nav-item active" onclick="changePage('general')">General Information</a>
+                                        <a id="nav-webhooks" class="nav-item" onclick="changePage('webhooks')">Webhooks</a>
                                     </div>
                                 </div>
                             </div>
@@ -65,7 +66,7 @@
 
                                 <div>
                                     <div class="top-bar">
-                                        <h1 class="title">General Information</h1>
+                                        <h1 class="title" id="pageTitle">General Information</h1>
                                         <span class="flex-grow"></span>
                                         <button id="pfpBtn" class="user-button">
                                             <img id="pfpBtnImg" class="pfp"
@@ -84,7 +85,8 @@
 
                                 <div class="main">
 
-                                    <div class="m-bottom-medium">Set your application's name, icon, etc.</div>
+                                    <div class="m-bottom-medium" id="pageDesc">Set your application's name, icon, etc.
+                                    </div>
 
                                     <div class="m-top-medium" id="form">
 
