@@ -68,7 +68,7 @@ a {
 /* text */
 
 .code-font {
-	font-family: 'Source Code Pro', monospace;
+	font-family: "Source Code Pro", monospace;
 }
 
 button {
@@ -135,6 +135,14 @@ button {
 
 .inputs .input.full {
 	margin-bottom: 8px;
+}
+
+.input-label {
+	display: block;
+	font-size: 0.95rem;
+	font-weight: 500;
+	margin-bottom: 0.3rem;
+	color: #51aebd;
 }
 
 /* icons */

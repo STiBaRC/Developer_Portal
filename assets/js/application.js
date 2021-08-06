@@ -4,19 +4,29 @@ function createForm(data, appID) {
     /* top */
     var top = document.createElement("div");
     top.setAttribute("class", "top");
+    var appIconWrapper = document.createElement("div");
+    var inputLabel = document.createElement("label");
+    inputLabel.setAttribute("class", "input-label");
+    inputLabel.appendChild(document.createTextNode("App Icon"));
+    appIconWrapper.appendChild(inputLabel);
     var appIcon = document.createElement("div");
     appIcon.setAttribute("class", "app-icon");
     var appIconImg = document.createElement("div");
     appIconImg.setAttribute("class", "app-icon-img");
     appIconImg.setAttribute("style", "background-image: url('" + data["appicon"] + "')");
     appIcon.appendChild(appIconImg);
-    top.appendChild(appIcon);
+    appIconWrapper.appendChild(appIcon);
+    top.appendChild(appIconWrapper);
     /* inputs */
     var inputs = document.createElement("div");
     inputs.setAttribute("class", "inputs");
+    var inputLabel = document.createElement("label");
+    inputLabel.setAttribute("class", "input-label");
+    inputLabel.appendChild(document.createTextNode("Name"));
+    inputs.appendChild(inputLabel);
     var nameInput = document.createElement("input");
+    nameInput.setAttribute("type", "text");
     nameInput.setAttribute("class", "input full");
-    nameInput.setAttribute("placeholder", "Application Name");
     nameInput.value = data["name"];
     inputs.appendChild(nameInput);
     /* info */
