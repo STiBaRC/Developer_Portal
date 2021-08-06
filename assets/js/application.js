@@ -87,6 +87,9 @@ function createForm(data, appID) {
             break;
         case "webhooks":
             var webhooks = data["webhooks"];
+            if (typeof(webhooks) == 'undefined') {
+                webhooks = {};
+            }
             /* inputs */
             var inputs = document.createElement("div");
             inputs.setAttribute("class", "inputs");
@@ -97,7 +100,9 @@ function createForm(data, appID) {
             var input = document.createElement("input");
             input.setAttribute("type", "text");
             input.setAttribute("class", "input full");
-            input.value = webhooks["newpost"]["endpoint"];
+            if (typeof(webhooks["newpost"]) !== 'undefined') {
+                input.value = webhooks["newpost"]["endpoint"];
+            }
             inputs.appendChild(input);
             inputLabel = document.createElement("label");
             inputLabel.setAttribute("class", "input-label");
@@ -106,7 +111,20 @@ function createForm(data, appID) {
             input = document.createElement("input");
             input.setAttribute("type", "text");
             input.setAttribute("class", "input full");
-            input.value = webhooks["newcomment"]["endpoint"];
+            if (typeof(webhooks["newcomment"]) !== 'undefined') {
+                input.value = webhooks["newcomment"]["endpoint"];
+            }
+            inputs.appendChild(input);
+            inputLabel = document.createElement("label");
+            inputLabel.setAttribute("class", "input-label");
+            inputLabel.appendChild(document.createTextNode("New Mention"));
+            inputs.appendChild(inputLabel);
+            input = document.createElement("input");
+            input.setAttribute("type", "text");
+            input.setAttribute("class", "input full");
+            if (typeof(webhooks["newmention"]) !== 'undefined') {
+                input.value = webhooks["newmention"]["endpoint"];
+            }
             inputs.appendChild(input);
             form.appendChild(inputs);
             break;
