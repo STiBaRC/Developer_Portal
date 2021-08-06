@@ -24,11 +24,20 @@ function createForm(data, appID) {
     inputLabel.setAttribute("class", "input-label");
     inputLabel.appendChild(document.createTextNode("Name"));
     inputs.appendChild(inputLabel);
-    var nameInput = document.createElement("input");
-    nameInput.setAttribute("type", "text");
-    nameInput.setAttribute("class", "input full");
-    nameInput.value = data["name"];
-    inputs.appendChild(nameInput);
+    var input = document.createElement("input");
+    input.setAttribute("type", "text");
+    input.setAttribute("class", "input full");
+    input.value = data["name"];
+    inputs.appendChild(input);
+    inputLabel = document.createElement("label");
+    inputLabel.setAttribute("class", "input-label");
+    inputLabel.appendChild(document.createTextNode("App Icon URL"));
+    inputs.appendChild(inputLabel);
+    input = document.createElement("input");
+    input.setAttribute("type", "text");
+    input.setAttribute("class", "input full");
+    input.value = data["appicon"];
+    inputs.appendChild(input);
     /* info */
     var appIDelement = document.createElement("div");
     appIDelement.setAttribute("class", "appID");
