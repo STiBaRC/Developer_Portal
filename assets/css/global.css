@@ -19,6 +19,11 @@ a {
 	text-decoration: none;
 }
 
+.flex {
+	display: flex;
+	align-items: center;
+}
+
 .flex-grow {
 	display: flex;
 	flex-grow: 1;
@@ -60,6 +65,12 @@ a {
 	margin-top: 2rem;
 }
 
+/* text */
+
+.code-font {
+	font-family: 'Source Code Pro', monospace;
+}
+
 button {
 	appearance: none;
 	background-color: transparent;
@@ -72,6 +83,7 @@ button {
 	border-radius: 6px;
 	cursor: pointer;
 	text-decoration: none;
+	font-weight: 500;
 	transition: background 0.125s, color 0.125s;
 	background-color: #fff;
 	color: #49b9ca;
@@ -119,6 +131,10 @@ button {
 
 .inputs {
 	box-sizing: border-box;
+}
+
+.inputs .input.full {
+	margin-bottom: 8px;
 }
 
 /* icons */
@@ -210,28 +226,28 @@ button {
 /* scrollbar */
 
 .scroller::-webkit-scrollbar {
-	width: 15px
+	width: 15px;
 }
 
 .scroller::-webkit-scrollbar-thumb, .scroller::-webkit-scrollbar-track {
 	background-clip: padding-box;
 	border-width: 3px;
 	border-style: solid;
-	border-radius: 30px
+	border-radius: 30px;
 }
 
 .scroller::-webkit-scrollbar-track {
-	border-width: initial
+	border-width: initial;
 }
 
 .scroller::-webkit-scrollbar-thumb {
-	background-color: rgba(0, 0, 0, .4);
-	border-color: transparent
+	background-color: rgba(0, 0, 0, 0.4);
+	border-color: transparent;
 }
 
 .scroller::-webkit-scrollbar-track {
 	background-color: transparent;
-	border-color: transparent
+	border-color: transparent;
 }
 
 .scroller::-webkit-scrollbar-thumb, .scroll-wrapper .scroller::-webkit-scrollbar-thumb, .scroller::-webkit-scrollbar-thumb {
@@ -246,7 +262,7 @@ button {
 
 .scroller::-webkit-scrollbar-track, .scroll-wrapper .scroller::-webkit-scrollbar-track, .scroller::-webkit-scrollbar-track {
 	background-color: transparent;
-	border-color: transparent
+	border-color: transparent;
 }
 
 .content {
@@ -640,19 +656,22 @@ button {
 	border-radius: 50%;
 }
 
-.app-icon-bg {
+.app .app-icon-img {
+	margin-bottom: 0.5rem;
+}
+
+.app-icon-img {
 	align-items: center;
 	background-size: cover;
 	border-radius: 50%;
 	justify-content: center;
-	margin-bottom: 0.5rem;
 	position: relative;
 	width: 100%;
 	height: auto;
 	box-sizing: border-box;
 }
 
-.app-icon-bg::after {
+.app-icon-img::after {
 	content: "";
 	display: block;
 	padding-bottom: 100%;
@@ -664,4 +683,37 @@ button {
 	text-align: center;
 	white-space: nowrap;
 	text-overflow: ellipsis;
+}
+
+/* form */
+
+.form {
+	max-width: 1080px;
+}
+
+.form .top {
+	display: flex;
+	align-items: top;
+}
+
+.form .top .app-icon {
+	background-color: #fff;
+	border-radius: 6px;
+	padding: 10px;
+}
+
+.form .app-icon {
+	line-height: 0;
+	width: 150px;
+	height: auto;
+	margin-right: 1rem;
+}
+
+.form .top .inputs {
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.form .top .appID {
+	margin-top: 0.75rem;
 }

@@ -47,9 +47,9 @@ function appModule(data, id) {
 	appWrapper.setAttribute("class", "app-wrapper");
 	var app = document.createElement("a");
 	app.setAttribute("class", "app");
-	app.setAttribute("href", "./application.html?id=" + id);
+	app.setAttribute("href", "./app.html?id=" + id);
 	var appIcon = document.createElement("div");
-	appIcon.setAttribute("class", "app-icon-bg");
+	appIcon.setAttribute("class", "app-icon-img");
 	appIcon.setAttribute("style", "background-image: url('" + data["appicon"] + "')");
 	app.appendChild(appIcon);
 	var appDetails = document.createElement("div");
