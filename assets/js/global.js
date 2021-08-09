@@ -78,9 +78,10 @@ if (sess !== null && sess !== "") {
 function getUserInfo() {
     var xhttp = new XMLHttpRequest();
     xhttp.onload = function () {
-        localStorage.setItem("username", this.responseText.replace(/(\r\n|\n|\r)/gm, ""));
-        getUserPfp('pfpBtnImg', localStorage.getItem("username"));
-        $("pfp-username").textContent = localStorage.getItem("username");
+        var username = this.responseText.replace(/(\r\n|\n|\r)/gm, "");
+        localStorage.setItem("username", username);
+        getUserPfp('pfpBtnImg', username);
+        $("pfp-username").textContent = username;
     };
     xhttp.open('GET', 'https://api.stibarc.com/v2/getusername.sjs?sess=' + localStorage.getItem("sess"), true);
     xhttp.send();
@@ -95,8 +96,8 @@ function getUserPfp(callback, username) {
             $("postPfp").src = userPfp;
         } else {
             localStorage.setItem('pfp', userPfp);
-            $("pfpBtnImg").src = localStorage.getItem('pfp');
-            $("mobilePfpBtnImg").src = localStorage.getItem('pfp');
+            $("pfpBtnImg").src = userPfp;
+            $("mobilePfpBtnImg").src = userPfp;
         }
     };
     xhttp.open('GET', 'https://api.stibarc.com/v2/getuserpfp.sjs?id=' + username, true);
