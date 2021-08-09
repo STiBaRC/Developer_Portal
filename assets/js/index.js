@@ -3,4 +3,6 @@ if(loggedIn) {
     $("topBtn").innerHTML = "My&nbsp;Applications";
     $("topBtn").href = "./applications.html";
     $("pfpBtn").style.display = "";
+} else {
+    $("mobilePfpBtn").style.display = "none";
 }

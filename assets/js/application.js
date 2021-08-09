@@ -31,6 +31,24 @@ function updatePage() {
     getAppInfo();
 }
 
+function createMethodSelect(value) {
+    var select = document.createElement("select");
+    select.setAttribute("class", "input ");
+    var option = document.createElement("option");
+    option.appendChild(document.createTextNode("HTTP Method"));
+    select.appendChild(option);
+    option = document.createElement("option");
+    option.appendChild(document.createTextNode("GET"));
+    option.setAttribute("value", "get");
+    select.appendChild(option);
+    option = document.createElement("option");
+    option.appendChild(document.createTextNode("POST"));
+    option.setAttribute("value", "post");
+    select.appendChild(option);
+    select.value = value;
+    return select;
+}
+
 function createForm(data, appID) {
     var form = document.createElement("div");
     form.setAttribute("class", "form");
@@ -97,7 +115,7 @@ function createForm(data, appID) {
             var input = document.createElement("input");
             input.setAttribute("type", "text");
             input.setAttribute("class", "input full");
-            if (typeof(webhooks["newpost"]) !== 'undefined') {
+            if (typeof (webhooks["newpost"]) !== 'undefined') {
                 input.value = webhooks["newpost"]["endpoint"];
             }
             inputs.appendChild(input);
@@ -108,7 +126,7 @@ function createForm(data, appID) {
             input = document.createElement("input");
             input.setAttribute("type", "text");
             input.setAttribute("class", "input full");
-            if (typeof(webhooks["newcomment"]) !== 'undefined') {
+            if (typeof (webhooks["newcomment"]) !== 'undefined') {
                 input.value = webhooks["newcomment"]["endpoint"];
             }
             inputs.appendChild(input);
@@ -116,13 +134,20 @@ function createForm(data, appID) {
             inputLabel.setAttribute("class", "input-label");
             inputLabel.appendChild(document.createTextNode("New Mention"));
             inputs.appendChild(inputLabel);
+            var inputContainer = document.createElement("div");
+            inputContainer.setAttribute("class", "flex");
             input = document.createElement("input");
             input.setAttribute("type", "text");
-            input.setAttribute("class", "input full");
-            if (typeof(webhooks["newmention"]) !== 'undefined') {
+            input.setAttribute("class", "input flex-grow");
+            inputContainer.appendChild(input);
+            var optionValue = "";
+            if (typeof (webhooks["newmention"]) !== 'undefined') {
                 input.value = webhooks["newmention"]["endpoint"];
+                optionValue = webhooks["newmention"]["method"];
             }
-            inputs.appendChild(input);
+            var select = createMethodSelect(optionValue);
+            inputContainer.appendChild(select);
+            inputs.appendChild(inputContainer);
             form.appendChild(inputs);
             break;
     }
