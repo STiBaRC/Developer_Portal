@@ -42,6 +42,19 @@
 // 	}
 // }
 
+function createApp() {
+	var appName = $("newAppName").value;
+	var encodedAppName = encodeURIComponent(appName);
+	fetch(sdpAPI + "newapp.sjs?sess=" + sess + "&name=" + encodedAppName).then(response => response.json()).then((data) => {
+		if (data["id"] !== undefined) {
+			console.log("App \"" + appName + "\" created!");
+			window.location.href = "app.html?id=" + data["id"];
+		}
+	}).catch((err) => {
+		console.log(err);
+	});
+}
+
 function appModule(data, id) {
 	var appWrapper = document.createElement("span");
 	appWrapper.setAttribute("class", "app-wrapper");
