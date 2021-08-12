@@ -85,7 +85,7 @@ function showApps(data) {
 	$("apps").appendChild(apps);
 }
 
-fetch(sdpAPI + "getappsinfo.sjs?sess=" + sess).then(response => response.json()).then((data) => {
+fetch(sdpAPI + "v2/getapps.sjs?sess=" + sess).then(response => response.json()).then((data) => {
 	$("apps").innerHTML = "";
 	if (data["ERR"] !== undefined && data["ERR"] == "NA") {
 		$("apps").textContent = "No apps";

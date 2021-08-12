@@ -31,9 +31,10 @@ function updatePage() {
     getAppInfo();
 }
 
-function createMethodSelect(value) {
+function createMethodSelect(value, id) {
     var select = document.createElement("select");
     select.setAttribute("class", "input ");
+    select.setAttribute("id", id);
     var option = document.createElement("option");
     option.appendChild(document.createTextNode("HTTP Method"));
     option.setAttribute("value", "");
@@ -50,7 +51,7 @@ function createMethodSelect(value) {
     return select;
 }
 
-function createTextInput(label, value, inputs) {
+function createTextInput(label, value, id, inputs) {
     var inputLabel = document.createElement("label");
     inputLabel.setAttribute("class", "input-label");
     inputLabel.appendChild(document.createTextNode(label));
@@ -58,11 +59,12 @@ function createTextInput(label, value, inputs) {
     var input = document.createElement("input");
     input.setAttribute("type", "text");
     input.setAttribute("class", "input full");
+    input.setAttribute("id", id);
     input.value = value;
     inputs.appendChild(input);
 }
 
-function createWebhookTextInput(label, webhook, inputs) {
+function createWebhookTextInput(label, webhook, id, inputs) {
     var inputLabel = document.createElement("label");
     inputLabel.setAttribute("class", "input-label");
     inputLabel.appendChild(document.createTextNode(label));
@@ -72,13 +74,14 @@ function createWebhookTextInput(label, webhook, inputs) {
     var input = document.createElement("input");
     input.setAttribute("type", "text");
     input.setAttribute("class", "input flex-grow");
+    input.setAttribute("id", id + "ep");
     inputContainer.appendChild(input);
     var optionValue = "";
     if (typeof (webhook) !== 'undefined') {
         input.value = webhook["endpoint"];
         optionValue = webhook["method"];
     }
-    var select = createMethodSelect(optionValue);
+    var select = createMethodSelect(optionValue, id + "m");
     inputContainer.appendChild(select);
     inputs.appendChild(inputContainer);
 }
@@ -107,8 +110,8 @@ function createForm(data, appID) {
             /* inputs */
             var inputs = document.createElement("div");
             inputs.setAttribute("class", "inputs");
-            createTextInput("Name", data["name"], inputs);
-            createTextInput("App Icon URL", data["appicon"], inputs);
+            createTextInput("Name", data["name"], "name", inputs);
+            createTextInput("App Icon URL", data["appicon"], "appIconUrl", inputs);
             /* info */
             var appIDelement = document.createElement("div");
             appIDelement.setAttribute("class", "appID");
@@ -126,9 +129,9 @@ function createForm(data, appID) {
             /* inputs */
             var inputs = document.createElement("div");
             inputs.setAttribute("class", "inputs");
-            createWebhookTextInput("New Post", webhooks["newpost"], inputs);
-            createWebhookTextInput("New Comment", webhooks["newcomment"], inputs);
-            createWebhookTextInput("New Mention", webhooks["newmention"], inputs);
+            createWebhookTextInput("New Post", webhooks["newpost"], "np", inputs);
+            createWebhookTextInput("New Comment", webhooks["newcomment"], "nc", inputs);
+            createWebhookTextInput("New Mention", webhooks["newmention"], "nm", inputs);
             form.appendChild(inputs);
             break;
     }
@@ -140,6 +143,7 @@ function createForm(data, appID) {
     bottom.appendChild(flexGrow);
     var updateBtn = document.createElement("button");
     updateBtn.setAttribute("class", "button");
+    updateBtn.setAttribute("onclick", "updateApp()");
     updateBtn.appendChild(document.createTextNode("Update"));
     bottom.appendChild(updateBtn);
     form.appendChild(bottom);
@@ -155,6 +159,41 @@ function getAppInfo() {
         $("form").appendChild(form);
     }).catch((err) => {
         console.log(err);
+    });
+}
+
+function updateApp() {
+    const formData = new URLSearchParams();
+    formData.append("sess", sess);
+    formData.append("id", appID);
+    formData.append("page", pageID);
+    if (pageID == "general") {
+        formData.append("name", $("name").value);
+        formData.append("icon", $("appIconUrl").value);
+    } else if (pageID == "webhooks") {
+        formData.append("npep", $("npep").value);
+        formData.append("npm", $("npm").value);
+        formData.append("ncep", $("ncep").value);
+        formData.append("ncm", $("ncm").value);
+        formData.append("nmep", $("nmep").value);
+        formData.append("nmm", $("nmm").value);
+    }
+    fetch(sdpAPI + "v2/updateapp.sjs", {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: formData
+    }).then(response => response.json()).then((data) => {
+        if (data.status == "OK") {
+            console.log("App updated");
+            location.reload();
+        } else {
+            alert("Error updating app: " + data.toString());
+        }
+    }).catch((error) => {
+        console.log(error);
+        alert("Error updating app: " + error);
     });
 }
 
