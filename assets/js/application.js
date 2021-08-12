@@ -17,10 +17,15 @@ function updatePage() {
             $("pageTitle").textContent = "General Information";
             $("pageDesc").textContent = "Set your application's name, icon, etc.";
             break;
+        case "oauth":
+            window.history.pushState('oauth', 'OAuth', '?id=' + appID + '&page=oauth');
+            $("pageTitle").textContent = "OAuth";
+            $("pageDesc").textContent = "Use STiBaRC as an authorization system or use our API on behalf of your users.";
+            break;
         case "webhooks":
             window.history.pushState('webhooks', 'Webhooks', '?id=' + appID + '&page=webhooks');
             $("pageTitle").textContent = "Webhooks";
-            $("pageDesc").textContent = "Add callbacks to services when something happens on the site";
+            $("pageDesc").textContent = "Add callbacks to services when something happens on the site.";
             break;
     }
     var navItems = $(".nav-item");
@@ -124,6 +129,13 @@ function createForm(data, appID) {
             top.appendChild(inputs);
             form.appendChild(top);
             break;
+        case "oauth":
+            /* inputs */
+            var inputs = document.createElement("div");
+            inputs.setAttribute("class", "inputs");
+            createTextInput("OAuth Endpoint", data["oauthend"], "oauth", inputs);
+            form.appendChild(inputs);
+            break;
         case "webhooks":
             var webhooks = data["webhooks"];
             /* inputs */
@@ -170,6 +182,8 @@ function updateApp() {
     if (pageID == "general") {
         formData.append("name", $("name").value);
         formData.append("icon", $("appIconUrl").value);
+    } else if (pageID == "oauth") {
+        formData.append("oauth", $("oauth").value);
     } else if (pageID == "webhooks") {
         formData.append("npep", $("npep").value);
         formData.append("npm", $("npm").value);
