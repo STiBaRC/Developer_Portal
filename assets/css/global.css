@@ -461,6 +461,9 @@ button {
 		opacity: 1;
 		pointer-events: auto;
 	}
+	.main-content .wrapper {
+		padding: 32px 2rem 32px 2rem;
+	}
 }
 
 .top-bar {
@@ -652,7 +655,7 @@ button {
 .apps {
 	grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
 	display: grid;
-	margin: -0.85rem 0 0 -0.85rem;
+	margin: -0.85rem 0 2rem -0.85rem;
 }
 
 .app-wrapper {
@@ -720,10 +723,17 @@ button {
 	align-items: top;
 }
 
+@media only screen and (max-width: 540px) {
+	.form .top {
+		display: block;
+	}
+}
+
 .form .top .app-icon {
 	background-color: #fff;
 	border-radius: 6px;
 	padding: 10px;
+	margin-bottom: 0.5rem;
 }
 
 .form .app-icon {

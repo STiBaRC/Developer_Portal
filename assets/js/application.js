@@ -3,6 +3,7 @@ var pageID = getAllUrlParams().page;
 function changePage(page) {
     pageID = page;
     updatePage();
+    toggleMenu(false);
 }
 
 function updatePage() {
@@ -11,19 +12,20 @@ function updatePage() {
     }
     const appID = getAllUrlParams().id;
     $("form").innerHTML = "<div class=\"loader\"></div>";
+    var params = '?page=' + pageID + '&id=' + appID;
     switch (pageID) {
         case "general":
-            window.history.pushState('general', 'General Information', '?id=' + appID + '&page=general');
+            window.history.pushState('general', 'General Information', params);
             $("pageTitle").textContent = "General Information";
             $("pageDesc").textContent = "Set your application's name, icon, etc.";
             break;
         case "oauth":
-            window.history.pushState('oauth', 'OAuth', '?id=' + appID + '&page=oauth');
+            window.history.pushState('oauth', 'OAuth', params);
             $("pageTitle").textContent = "OAuth";
             $("pageDesc").textContent = "Use STiBaRC as an authorization system or use our API on behalf of your users.";
             break;
         case "webhooks":
-            window.history.pushState('webhooks', 'Webhooks', '?id=' + appID + '&page=webhooks');
+            window.history.pushState('webhooks', 'Webhooks', params);
             $("pageTitle").textContent = "Webhooks";
             $("pageDesc").textContent = "Add callbacks to services when something happens on the site.";
             break;
