@@ -723,12 +723,6 @@ button {
 	align-items: top;
 }
 
-@media only screen and (max-width: 540px) {
-	.form .top {
-		display: block;
-	}
-}
-
 .form .top .app-icon {
 	background-color: #fff;
 	border-radius: 6px;
@@ -750,4 +744,21 @@ button {
 
 .form .top .appID {
 	margin-top: 0.75rem;
+}
+
+@media only screen and (max-width: 540px) {
+	.form .top {
+		display: block;
+	}
+	.inputs.webhooks .inputContainer {
+		display: block;
+	}
+	.inputs.webhooks .input {
+		display: block;
+		width: 100%;
+		margin-bottom: 8px;
+	}
+	.inputContainer .input:last-child {
+		margin: 0;
+	}
 }

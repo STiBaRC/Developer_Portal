@@ -142,7 +142,7 @@ function createForm(data, appID) {
             var webhooks = data["webhooks"];
             /* inputs */
             var inputs = document.createElement("div");
-            inputs.setAttribute("class", "inputs");
+            inputs.setAttribute("class", "inputs webhooks");
             createWebhookTextInput("New Post", webhooks["newpost"], "np", inputs);
             createWebhookTextInput("New Comment", webhooks["newcomment"], "nc", inputs);
             createWebhookTextInput("New Mention", webhooks["newmention"], "nm", inputs);
