@@ -126,14 +126,24 @@ function createForm(data, appID) {
             createTextInput("Name", data["name"], "name", inputs);
             createTextInput("App Icon URL", data["appicon"], "appIconUrl", inputs);
             /* info */
-            var appIDelement = document.createElement("div");
-            appIDelement.setAttribute("class", "appID");
-            appIDelement.appendChild(document.createTextNode("App ID: "));
+            var info = document.createElement("div");
+            info.setAttribute("class", "info");
+            var appIDInfo = document.createElement("span");
+            appIDInfo.appendChild(document.createTextNode("App ID: "));
             var codeFont = document.createElement("span");
             codeFont.setAttribute("class", "code-font");
             codeFont.appendChild(document.createTextNode(appID));
-            appIDelement.appendChild(codeFont);
-            inputs.appendChild(appIDelement);
+            appIDInfo.appendChild(codeFont);
+            info.appendChild(appIDInfo);
+            var flexGrow = document.createElement("span");
+            flexGrow.setAttribute("class", "flex-grow");
+            info.appendChild(flexGrow);
+            var deleteBtn = document.createElement("button");
+            deleteBtn.setAttribute("class", "button red outline");
+            deleteBtn.setAttribute("onclick", "deleteApp()");
+            deleteBtn.appendChild(document.createTextNode("Delete App"));
+            info.appendChild(deleteBtn);
+            inputs.appendChild(info);
             top.appendChild(inputs);
             form.appendChild(top);
             break;
@@ -217,6 +227,31 @@ function updateApp() {
         console.log(error);
         alert("Error updating app: " + error);
     });
+}
+
+function deleteApp() {
+    if (confirm("This will delete your app permanently!")) {
+        const formData = new URLSearchParams();
+        formData.append("sess", sess);
+        formData.append("id", appID);
+        fetch(sdpAPI + "v2/deleteapp.sjs", {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: formData
+        }).then(response => response.json()).then((data) => {
+            if (data.status == "OK") {
+                console.log("App deleted");
+                location.href = "./applications.html";
+            } else {
+                alert("Error deleting app: " + data.toString());
+            }
+        }).catch((error) => {
+            console.log(error);
+            alert("Error deleting app: " + error);
+        });
+    }
 }
 
 window.onpopstate = function (e) {
