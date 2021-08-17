@@ -72,6 +72,7 @@ var sess = localStorage.getItem("sess");
 var loggedIn = false;
 if (sess !== null && sess !== "") {
     loggedIn = true;
+    getUserInfo();
 }
 
 // get profile info //
@@ -103,5 +104,3 @@ function getUserPfp(callback, username) {
     xhttp.open('GET', 'https://api.stibarc.com/v2/getuserpfp.sjs?id=' + username, true);
     xhttp.send();
 }
-
-getUserInfo();

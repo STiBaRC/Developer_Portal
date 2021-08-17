@@ -17,6 +17,7 @@ body {
 
 a {
 	text-decoration: none;
+	transition: background 0.125s, color 0.125s;
 }
 
 .flex {
@@ -343,10 +344,6 @@ button {
 	align-items: center;
 	color: #fff;
 	line-height: 0;
-}
-
-.logo img {
-	height: 35px;
 }
 
 .logo>span {

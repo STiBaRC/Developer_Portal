@@ -7,7 +7,9 @@ function changePage(page) {
 }
 
 function updatePage() {
+    var defaultPage = false;
     if (pageID == "" | pageID == undefined) {
+        defaultPage = true;
         pageID = "general";
     }
     const appID = getAllUrlParams().id;
@@ -15,7 +17,11 @@ function updatePage() {
     var params = '?page=' + pageID + '&id=' + appID;
     switch (pageID) {
         case "general":
-            window.history.pushState('general', 'General Information', params);
+            if (defaultPage) {
+                window.history.replaceState('general', 'General Information', params);
+            } else {
+                window.history.pushState('general', 'General Information', params);
+            }
             $("pageTitle").textContent = "General Information";
             $("pageDesc").textContent = "Set your application's name, icon, etc.";
             break;
