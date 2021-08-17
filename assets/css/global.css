@@ -85,7 +85,7 @@ button {
 	cursor: pointer;
 	text-decoration: none;
 	font-weight: 500;
-	transition: background 0.125s, color 0.125s;
+	transition: all .17s ease-out;
 	background-color: #fff;
 	color: #49b9ca;
 }
@@ -109,6 +109,34 @@ button {
 
 .button.primary:focus {
 	background-color: #52b7c7;
+}
+
+.button.outline {
+	background-color: transparent;
+	color: #fff;
+	padding: calc(0.55rem - 1px) calc(1.35rem - 1px);
+	border: 1px solid #fff;
+}
+
+.button.outline:hover {
+	border-color: #e5f6ff;
+}
+
+.button.outline:focus {
+	border-color: #d6ebf5;
+}
+
+.button.outline.red {
+	color: #f15d5d;
+	border-color: #f15d5d;
+}
+
+.button.outline.red:hover {
+	border-color: #ff7575;
+}
+
+.button.outline.red:focus {
+	border-color: rgb(238, 100, 100);
 }
 
 /* inputs */
@@ -739,7 +767,8 @@ button {
 	box-sizing: border-box;
 }
 
-.form .top .appID {
+.form .top .info {
+	display: flex;
 	margin-top: 0.75rem;
 }
 
