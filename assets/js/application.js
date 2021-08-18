@@ -38,6 +38,7 @@ function updatePage() {
     }
     $("nav-" + pageID).classList.add("active");
     getAppInfo();
+    getApps();
 }
 
 function createMethodSelect(value, id) {
@@ -183,6 +184,32 @@ function getAppInfo() {
         $("form").innerHTML = "";
         var form = createForm(data, appID);
         $("form").appendChild(form);
+    }).catch((err) => {
+        console.log(err);
+    });
+}
+
+function createAppSelect(data) {
+    var select = document.createElement("select");
+    select.setAttribute("class", "input primary full");
+    for (var selectAppID in data) {
+        var appInfo = data[selectAppID];
+        var option = document.createElement("option");
+        option.value = selectAppID;
+        option.appendChild(document.createTextNode(appInfo["name"]));
+        select.appendChild(option);
+    }
+    select.value = appID;
+    select.addEventListener('change', function () {
+        location.href = "./app.html?id=" + this.value;
+    });
+    $("appSelect").appendChild(select);
+}
+
+function getApps() {
+    fetch(sdpAPI + "v2/getapps.sjs?sess=" + sess).then(response => response.json()).then((data) => {
+        $("appSelect").innerHTML = "";
+        createAppSelect(data);
     }).catch((err) => {
         console.log(err);
     });

@@ -159,6 +159,16 @@ button {
 	border-color: #59d1e3;
 }
 
+.input.primary {
+	background-color: #49b9ca;
+	border-color: #59d1e3;
+	color: #fff;
+}
+
+.input.primary:focus {
+	border-color: #5fdbee;
+}
+
 .inputContainer .input:last-child {
 	margin-left: 8px;
 }
@@ -416,6 +426,10 @@ button {
 	margin-right: 0.65rem;
 }
 
+.nav-items #appSelect {
+	margin-bottom: 1rem;
+}
+
 .mobile-nav {
 	display: none;
 	color: #fff;
@@ -610,6 +624,11 @@ button {
 	height: 25px;
 	margin: auto;
 	animation: spin 0.4s linear infinite;
+}
+
+.loader.small {
+	width: 20px;
+	height: 20px;
 }
 
 @keyframes spin {
