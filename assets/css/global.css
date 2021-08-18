@@ -127,16 +127,16 @@ button {
 }
 
 .button.outline.red {
-	color: #f15d5d;
-	border-color: #f15d5d;
+	color: #e73939;
+    border-color: #e73939;
 }
 
 .button.outline.red:hover {
-	border-color: #ff7575;
+	border-color: #ff5d5d;
 }
 
 .button.outline.red:focus {
-	border-color: rgb(238, 100, 100);
+	border-color: #be2828;
 }
 
 /* inputs */
@@ -349,6 +349,7 @@ button {
 	flex-direction: column;
 	overflow: hidden;
 	z-index: 2;
+	box-shadow: 0 0 6px rgb(0 0 0 / 15%);
 }
 
 .main-content .wrapper {
@@ -700,6 +701,7 @@ button {
 	padding: 0.75rem 0.75rem 0.75rem 0.75rem;
 	border-radius: 8px;
 	transition: background 0.125s, color 0.125s;
+	box-shadow: 0 0 6px rgba(0, 0, 0, 0.25);
 }
 
 .app-icon {
