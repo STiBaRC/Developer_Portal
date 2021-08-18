@@ -17,11 +17,7 @@ function updatePage() {
     var params = '?page=' + pageID + '&id=' + appID;
     switch (pageID) {
         case "general":
-            if (defaultPage) {
-                window.history.replaceState('general', 'General Information', params);
-            } else {
-                window.history.pushState('general', 'General Information', params);
-            }
+            window.history.pushState('general', 'General Information', params);
             $("pageTitle").textContent = "General Information";
             $("pageDesc").textContent = "Set your application's name, icon, etc.";
             break;
