@@ -12,7 +12,6 @@ function updatePage() {
         defaultPage = true;
         pageID = "general";
     }
-    const appID = getAllUrlParams().id;
     $("form").innerHTML = "<div class=\"loader\"></div>";
     var params = '?page=' + pageID + '&id=' + appID;
     switch (pageID) {
