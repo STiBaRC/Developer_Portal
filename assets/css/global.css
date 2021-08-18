@@ -160,13 +160,13 @@ button {
 }
 
 .input.primary {
-	background-color: #49b9ca;
-	border-color: #59d1e3;
+	background-color: #60c9da;
+	border-color: #61d5e7;
 	color: #fff;
 }
 
 .input.primary:focus {
-	border-color: #5fdbee;
+	border-color: #6be1f3;
 }
 
 .inputContainer .input:last-child {
