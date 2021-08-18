@@ -201,7 +201,9 @@ function createAppSelect(data) {
     }
     select.value = appID;
     select.addEventListener('change', function () {
-        location.href = "./app.html?id=" + this.value;
+        //location.href = "./app.html?id=" + this.value;
+        appID = this.value;
+        updatePage();
     });
     $("appSelect").appendChild(select);
 }
