@@ -111,6 +111,19 @@ button {
 	background-color: #52b7c7;
 }
 
+.button.red {
+	color: #fff;
+	background-color: #e73939;
+}
+
+.button.red:hover {
+	background-color: #ff5d5d;
+}
+
+.button.red:focus {
+	background-color: #be2828;
+}
+
 .button.outline {
 	background-color: transparent;
 	color: #fff;
@@ -133,10 +146,12 @@ button {
 
 .button.outline.red:hover {
 	border-color: #ff5d5d;
+	background-color: transparent;
 }
 
 .button.outline.red:focus {
 	border-color: #be2828;
+	background-color: transparent;
 }
 
 /* inputs */
@@ -167,6 +182,10 @@ button {
 
 .input.primary:focus {
 	border-color: #43afc0;
+}
+
+.input.red, .input.red:focus {
+	border-color: #e73939;
 }
 
 .inputContainer .input:last-child {

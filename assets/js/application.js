@@ -136,7 +136,7 @@ function createForm(data, appID) {
             info.appendChild(flexGrow);
             var deleteBtn = document.createElement("button");
             deleteBtn.setAttribute("class", "button red outline");
-            deleteBtn.setAttribute("onclick", "deleteApp()");
+            deleteBtn.setAttribute("onclick", "openDeleteAppModal()");
             deleteBtn.appendChild(document.createTextNode("Delete App"));
             info.appendChild(deleteBtn);
             inputs.appendChild(info);
@@ -177,12 +177,15 @@ function createForm(data, appID) {
 }
 
 var appID = getAllUrlParams().id;
+var appName;
 
 function getAppInfo() {
     fetch(sdpAPI + "getappdetails.sjs?sess=" + sess + "&id=" + appID).then(response => response.json()).then((data) => {
         $("form").innerHTML = "";
         var form = createForm(data, appID);
         $("form").appendChild(form);
+        appName = data["name"]
+        $("deleteAppName").textContent = appName;
     }).catch((err) => {
         console.log(err);
     });
@@ -259,8 +262,14 @@ function updateApp() {
     });
 }
 
+function openDeleteAppModal() {
+    $("deleteAppModal").style.display = "";
+	$("appName").focus();
+}
+
 function deleteApp() {
-    if (confirm("This will delete your app permanently!")) {
+    $("appName").classList.remove("red");
+    if ($("appName").value == appName) {
         const formData = new URLSearchParams();
         formData.append("sess", sess);
         formData.append("id", appID);
@@ -281,6 +290,8 @@ function deleteApp() {
             console.log(error);
             alert("Error deleting app: " + error);
         });
+    } else {
+        $("appName").classList.add("red");
     }
 }
 

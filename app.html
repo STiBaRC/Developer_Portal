@@ -116,6 +116,23 @@
         </div>
     </div>
 
+    <div class="overlay" id="deleteAppModal" style="display: none;">
+        <div class="dialog">
+            <div class="dialog-inner">
+                <h2 class="dialog-title">Delete Application</h2>
+                <p>To delete this app, comfirm it's name (<span id="deleteAppName"></span>).</p>
+                <div class="inputs">
+                    <input id="appName" class="input full" type="text" placeholder="Name">
+                </div>
+                <div class="dialog-actions">
+                    <span class="flex-grow"></span>
+                    <button class="button" onclick="closeDialogs()">Cancel</button>
+                    <button class="button red" onclick="deleteApp()">Delete App</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="./assets/js/global.js"></script>
     <script src="./assets/js/application.js"></script>
     <script src="./assets/js/app.js"></script>

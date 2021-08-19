@@ -47,6 +47,13 @@ document.addEventListener("click", function (event) {
     }
 });
 
+function closeDialogs() {
+	const overlays = $(".overlay");
+	for (var i = 0; i < overlays.length; i++) {
+		overlays[i].style.display = "none";
+	}
+}
+
 /* mobile menu */
 
 var mobileMenuOpen = false;
