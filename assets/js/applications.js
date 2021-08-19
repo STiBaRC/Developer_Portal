@@ -44,7 +44,7 @@ function showApps(data) {
 fetch(sdpAPI + "v2/getapps.sjs?sess=" + sess).then(response => response.json()).then((data) => {
 	$("apps").innerHTML = "";
 	if (data["ERR"] !== undefined && data["ERR"] == "NA") {
-		$("apps").textContent = "No apps";
+		$("apps").textContent = "No apps. Click New App above to get started.";
 	} else {
 		showApps(data);
 	}
@@ -56,3 +56,9 @@ function newApp() {
 	$("newAppModal").style.display = "";
 	$("newAppName").focus();
 }
+
+$("newAppName").addEventListener("keyup", function (event) {
+	if (event.keyCode === 13) {
+		createApp();
+	}
+});

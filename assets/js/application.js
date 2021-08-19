@@ -262,11 +262,6 @@ function updateApp() {
     });
 }
 
-function openDeleteAppModal() {
-    $("deleteAppModal").style.display = "";
-	$("appName").focus();
-}
-
 function deleteApp() {
     $("appName").classList.remove("red");
     if ($("appName").value == appName) {
@@ -294,6 +289,17 @@ function deleteApp() {
         $("appName").classList.add("red");
     }
 }
+
+function openDeleteAppModal() {
+    $("deleteAppModal").style.display = "";
+    $("appName").focus();
+}
+
+$("appName").addEventListener("keyup", function (event) {
+    if (event.keyCode === 13) {
+        deleteApp();
+    }
+});
 
 window.onpopstate = function (e) {
     if (e.state) {
