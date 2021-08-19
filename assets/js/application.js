@@ -189,6 +189,11 @@ function getAppInfo() {
 }
 
 function createAppSelect(data) {
+    var inputContainer = document.createElement("div");
+    var label = document.createElement("label");
+    label.setAttribute("class", "input-label");
+    label.appendChild(document.createTextNode("Selected app"));
+    inputContainer.appendChild(label);
     var select = document.createElement("select");
     select.setAttribute("class", "input primary full");
     for (var selectAppID in data) {
@@ -204,7 +209,8 @@ function createAppSelect(data) {
         appID = this.value;
         updatePage();
     });
-    $("appSelect").appendChild(select);
+    inputContainer.appendChild(select);
+    $("appSelect").appendChild(inputContainer);
 }
 
 function getApps() {
