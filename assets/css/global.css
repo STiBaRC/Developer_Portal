@@ -161,12 +161,12 @@ button {
 
 .input.primary {
 	background-color: #60c9da;
-	border-color: #61d5e7;
+	border-color: #43afc0;
 	color: #fff;
 }
 
 .input.primary:focus {
-	border-color: #6be1f3;
+	border-color: #43afc0;
 }
 
 .inputContainer .input:last-child {
@@ -430,6 +430,9 @@ button {
 	margin-bottom: 1rem;
 }
 
+.nav-items .input-label {
+	color: rgba(255, 255, 255, 0.82);
+}
 .mobile-nav {
 	display: none;
 	color: #fff;
