@@ -137,7 +137,7 @@ function createForm(data, appID) {
             var deleteBtn = document.createElement("button");
             deleteBtn.setAttribute("class", "button red outline");
             deleteBtn.setAttribute("onclick", "openDeleteAppModal()");
-            deleteBtn.appendChild(document.createTextNode("Delete App"));
+            deleteBtn.appendChild(document.createTextNode("Delete\u00A0App"));
             info.appendChild(deleteBtn);
             inputs.appendChild(info);
             top.appendChild(inputs);
