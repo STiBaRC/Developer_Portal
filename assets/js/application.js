@@ -184,7 +184,8 @@ function getAppInfo() {
         $("form").innerHTML = "";
         var form = createForm(data, appID);
         $("form").appendChild(form);
-        appName = data["name"]
+        appName = data["name"];
+        document.title = appName + " - STiBaRC Developer Portal";
         $("deleteAppName").textContent = appName;
     }).catch((err) => {
         console.log(err);
