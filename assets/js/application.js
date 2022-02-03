@@ -227,29 +227,29 @@ function getApps() {
 }
 
 function updateApp() {
-    const formData = new URLSearchParams();
-    formData.append("sess", sess);
-    formData.append("id", appID);
-    formData.append("page", pageID);
+    const appData = {};
+    appData["sess"] = sess;
+    appData["id"] = appID;
+    appData["page"] = pageID;
     if (pageID == "general") {
-        formData.append("name", $("name").value);
-        formData.append("icon", $("appIconUrl").value);
+        appData["name"] = $("name").value;
+        appData["icon"] = $("appIconUrl").value;
     } else if (pageID == "oauth") {
-        formData.append("oauth", $("oauth").value);
+        appData["oauth"] = $("oauth").value;
     } else if (pageID == "webhooks") {
-        formData.append("npep", $("npep").value);
-        formData.append("npm", $("npm").value);
-        formData.append("ncep", $("ncep").value);
-        formData.append("ncm", $("ncm").value);
-        formData.append("nmep", $("nmep").value);
-        formData.append("nmm", $("nmm").value);
+        appData["npep"] = $("npep").value;
+        appData["npm"] = $("npm").value;
+        appData["ncep"] = $("ncep").value;
+        appData["ncm"] = $("ncm").value;
+        appData["nmep"] = $("nmep").value;
+        appData["nmm"] = $("nmm").value;
     }
     fetch(sdpAPI + "v2/updateapp.sjs", {
         method: 'POST',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
         },
-        body: formData
+        body: serialize(appData)
     }).then(response => response.json()).then((data) => {
         if (data.status == "OK") {
             console.log("App updated");

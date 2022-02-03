@@ -20,6 +20,15 @@ function getAllUrlParams() {
 	return obj;
 }
 
+serialize = function(obj) {
+    var str = [];
+    for (var p in obj)
+      if (obj.hasOwnProperty(p)) {
+        str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
+      }
+    return str.join("&");
+  }
+
 document.addEventListener("click", function (event) {
     /* user dropdown */
     var pfpBtnClicked = $("pfpBtn").contains(event.target);
