@@ -4,7 +4,7 @@ function createApp() {
 	fetch(sdpAPI + "newapp.sjs?sess=" + sess + "&name=" + encodedAppName).then(response => response.json()).then((data) => {
 		if (data["id"] !== undefined) {
 			console.log("App \"" + appName + "\" created!");
-			window.location.href = "app.html?id=" + data["id"];
+			window.location.href = "./app.html?id=" + data["id"];
 		}
 	}).catch((err) => {
 		console.log(err);

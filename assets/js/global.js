@@ -9,25 +9,25 @@ function $(id) {
 }
 
 function getAllUrlParams() {
-	var queries = location.search.slice(1).split("&");
-	var obj = {};
-	for (var i in queries) {
-		if (queries[i] != "") {
-			var tmp = queries[i].split("=");
-			obj[decodeURIComponent(tmp[0])] = decodeURIComponent(tmp[1]);
-		}
-	}
-	return obj;
+    var queries = location.search.slice(1).split("&");
+    var obj = {};
+    for (var i in queries) {
+        if (queries[i] != "") {
+            var tmp = queries[i].split("=");
+            obj[decodeURIComponent(tmp[0])] = decodeURIComponent(tmp[1]);
+        }
+    }
+    return obj;
 }
 
-serialize = function(obj) {
+serialize = function (obj) {
     var str = [];
     for (var p in obj)
-      if (obj.hasOwnProperty(p)) {
-        str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
-      }
+        if (obj.hasOwnProperty(p)) {
+            str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
+        }
     return str.join("&");
-  }
+}
 
 document.addEventListener("click", function (event) {
     /* user dropdown */
@@ -57,10 +57,10 @@ document.addEventListener("click", function (event) {
 });
 
 function closeDialogs() {
-	const overlays = $(".overlay");
-	for (var i = 0; i < overlays.length; i++) {
-		overlays[i].style.display = "none";
-	}
+    const overlays = $(".overlay");
+    for (var i = 0; i < overlays.length; i++) {
+        overlays[i].style.display = "none";
+    }
 }
 
 /* mobile menu */

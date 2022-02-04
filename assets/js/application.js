@@ -227,7 +227,7 @@ function getApps() {
 }
 
 function updateApp() {
-    const appData = {};
+    var appData = {};
     appData["sess"] = sess;
     appData["id"] = appID;
     appData["page"] = pageID;
